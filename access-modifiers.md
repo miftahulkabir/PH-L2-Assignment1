@@ -33,7 +33,7 @@ console.log(user.getName())
 Here we can see we can access the name property directly using user.name and also can change the value of user.name as name property is public. Also as getName is public so we can access it from outside class. We could also access them from the classes that inherits this User class.
 
 ### Protected
-With protected access modifier we can access a property or method within that class and classes that inhertis that class but no ohter places. If a class inherits another class the child class can access all the protected properties of the parent class. We can use the protected properties inside the class and in the child classes. For example:
+With protected access modifier we can access a property or method within that class and classes that inherits that class but no ohter places. If a class inherits another class the child class can access all the protected properties of the parent class. We can use the protected properties inside the class and in the child classes. For example:
 ```typescript
 class Employee {
     public name : string;
@@ -140,4 +140,4 @@ obj.data = "something" // this will show error
 Here reading value from obj.data is valid but changing value from obj.data will show error.
 
 ## Conclusion
-Access modifiers let us hideout sensitive data when outside world. With private we restrict it everywhere and with protected we restrict it everywhere except subclasses. We use getter setter methods to access those private and protected datas which encapsulates it and it gives us extra power to filter out or put our logic over what values can assigned to our properties. To follow the OOP paradigm access modifiers are inevitable.
+Access modifiers let us hideout sensitive data from outside world. With private we restrict it everywhere and with protected we restrict it everywhere except subclasses. We use getter setter methods to access those private and protected datas which encapsulates it and it gives us extra power to filter out or put our logic over what values can be assigned to our properties. To follow the OOP paradigm access modifiers are inevitable.
