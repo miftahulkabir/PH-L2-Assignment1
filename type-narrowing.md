@@ -21,7 +21,7 @@ const print = (value : string | number) : string | number {
 ```
 Here before performing toLowerCase() we are checking weather it is string or not with typeof operator. This is one kind of type narrowing.
 
-Another concept in type narrowing is truthiness which is if a data can have null or undefined with other data types we can simply check weather the data is not null or undefined before accesing the other data types properties or methods. 
+Another concept in type narrowing is truthiness which is if a data can have null or undefined with other data types we can simply check weather the data is not null or undefined before accessing the other data types properties or methods. 
 ```typescript
 type Obj = {
     data1: string,
@@ -71,11 +71,11 @@ const showDate = (date : Date | string) : string => {
     return date.toISOString() // this will show error
 }
 ```
-As date can be either instance of Date or a string toISOString can' be perform on here so we have to narrow down our type and check weather date is an instance of Date class or not.
+As date can be either instance of Date or a string toISOString can't be perform on here so we have to narrow down our type and check weather date is an instance of Date class or not.
 ```typescript
 const showDate = (date : Date | string) : string => {
     if(date instanceof Date) {
-        return date.toISOString() /// this will show no erro
+        return date.toISOString() /// this will show no error
     }
 
     return date;
@@ -83,7 +83,7 @@ const showDate = (date : Date | string) : string => {
 ```
 Here we are checking weather date is instance of Date class which let us safely perform toISOString method which is available to Date class but not string.
 
-Another type of typenarrowing is using in operator to check weather a certain property or method exists in an object. For example:
+Another type of type narrowing is using "in" operator to check weather a certain property or method exists in an object. For example:
 ```typescript
 type Dog = {
     bark() : string
@@ -99,7 +99,7 @@ const animalSound = (animal : Dog | Cat) : string => {
 
 ```
 
-Here animal.bark() will show error because bark only exist specifically to Dog but animal is Dog | Cat. To solve this we will use the in operator to check weather bark exists in animal and only then use it and if not then use meow.
+Here animal.bark() will show error because bark only exist specifically to Dog but animal is Dog | Cat. To solve this we will use the "in" operator to check weather bark exists in animal and only then use it and if not then use meow.
 
 ```typescript
 const animalSound = (animal : Dog | Cat) : string => {
@@ -127,7 +127,7 @@ const myAnimal = (animal : Chicken | Cow) => {
 }
 ```
 
-Here animal.canFly() will show error because it can Chicken or Cow and Cow doesn't have that canFly() property and to solve this we will use the common property which both objects shares which is kind and we will check weather it is chicken or cow and only then perform operation.
+Here animal.canFly() will show error because it can be Chicken or Cow and Cow doesn't have that canFly() property and to solve this we will use the common property which both objects shares which is kind and we will check weather it is chicken or cow and only then perform operation.
 ```typescript
 const myAnimal = (animal : Chicken | Cow) => {
     if(animal.kind === "bird") {
